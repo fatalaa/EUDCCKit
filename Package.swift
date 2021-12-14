@@ -16,25 +16,7 @@ let package = Package(
             targets: [
                 "EUDCC"
             ]
-        ),
-        .library(
-            name: "EUDCCDecoder",
-            targets: [
-                "EUDCCDecoder"
-            ]
-        ),
-        .library(
-            name: "EUDCCVerifier",
-            targets: [
-                "EUDCCVerifier"
-            ]
-        ),
-        .library(
-            name: "EUDCCValidator",
-            targets: [
-                "EUDCCValidator"
-            ]
-        ),
+        )
     ],
     dependencies: [
         .package(
@@ -44,60 +26,9 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "EUDCC"
-        ),
-        .target(
-            name: "EUDCCDecoder",
+            name: "EUDCC",
             dependencies: [
-                "EUDCC",
                 "SwiftCBOR"
-            ]
-        ),
-        .target(
-            name: "EUDCCVerifier",
-            dependencies: [
-                "EUDCC",
-                "SwiftCBOR"
-            ]
-        ),
-        .target(
-            name: "EUDCCValidator",
-            dependencies: [
-                "EUDCC"
-            ]
-        ),
-        .target(
-            name: "EUDCCKitTests",
-            dependencies: [
-                "EUDCC",
-                "EUDCCDecoder",
-                "EUDCCValidator",
-                "EUDCCVerifier"
-            ],
-            path: "Tests/_EUDCCKitTests"
-        ),
-        .testTarget(
-            name: "EUDCCTests",
-            dependencies: [
-                "EUDCCKitTests"
-            ]
-        ),
-        .testTarget(
-            name: "EUDCCDecoderTests",
-            dependencies: [
-                "EUDCCKitTests"
-            ]
-        ),
-        .testTarget(
-            name: "EUDCCVerifierTests",
-            dependencies: [
-                "EUDCCKitTests"
-            ]
-        ),
-        .testTarget(
-            name: "EUDCCValidatorTests",
-            dependencies: [
-                "EUDCCKitTests"
             ]
         )
     ]
